@@ -6,30 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator app</title>
     <link href="styles.css" rel="stylesheet">
-  <script src="script.js" defer></script>
 </head>
+<body>
 <div class="pad">
-<div class="output">
-    <div class="previous-operand"></div>
-    <div class="current-operand"></div>
-  </div>
-<button class="number">1</button>
-<button class="number">2</button>
-<button>3</button>
-<button>4</button>
-<button>5</button>
-<button>6</button>
-<button>7</button>
-<button>8</button>
-<button>9</button>
-<button>0</button>
-<button>+</button>
-<button>-</button>
-<button>/</button>
-<button>*</button>
-<button>=</button>
-<button>CLEAR</button>
-
+<div class="output"></div>
+<button class="number" value="1">1</button>
+<button class="number" value="2">2</button>
+<button class="number" value="3">3</button>
+<button class="number" value="4">4</button>
+<button class="number" value="5">5</button>
+<button class="number" value="6">6</button>
+<button class="number" value="7">7</button>
+<button class="number" value="8">8</button>
+<button class="number" value="9">9</button>
+<button class="number" value="0">0</button>
+<button class id="dot">.</button>
+<button class="operator" value="+">+</button>
+<button class="operator" value="-">-</button>
+<button class="operator" value="/">/</button>
+<button class="operator" value="*">*</button>
+<button class="equals">=</button>
+<button class="clear">CLEAR</button>
+</div>
 
 
 
@@ -40,7 +38,8 @@
 
 
 </div>
-<body>
-    
+
+
+<script src="script.js"></script>   
 </body>
 </html>

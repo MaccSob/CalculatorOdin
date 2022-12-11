@@ -1,3 +1,16 @@
+
+const display = document.querySelector('.output');
+const numberButtons = document.querySelectorAll('.number')
+const operatorButtons = document.querySelectorAll('.operator');
+const dot = document.getElementById("dot");
+const equalsButton = document.querySelector(".equals");
+const clear = document.querySelector('.clear');
+
+let displayValue = "";
+let storedNumber = "";
+let clickedOperator = "";
+
+
 function addNumbers(num1, num2) {
     return num1 + num2;
 }
@@ -33,9 +46,49 @@ function operate(operator, num1, num2) {
         return null
     }
 }
-const numberButtons = document.querySelectorAll('number')
-console.log(operate("-",5,5));
-appendNumber(number); {
-    if (number === '.' && this.currentOperand.includes('.')) return
-    this.currentOperand = this.currentOperand.toString() + number.toString()
-  }
+
+
+numberButtons.forEach(number => {
+    number.addEventListener('click', (e) => {  
+        displayValue += number.value;
+        display.textContent = displayValue;
+        displayValue = storedNumber;
+        console.log(displayValue);
+        
+    })
+});
+operatorButtons.forEach(operator => {
+    operator.addEventListener('click', (e) => {
+        clickedOperator = operator;
+        display.textContent = clickedOperator;
+        console.log(clickedOperator);
+    })
+});
+
+
+dot.addEventListener("click", function() {
+    if (display.textContent.includes('.')) return
+  display.textContent += '.'
+});
+equalsButton.addEventListener('click', displayResults)
+
+
+function displayResults() {
+
+        display.textContent = operate(clickedOperator,parseFloat(displayValue),parseFloat(storedNumber));
+        
+
+}
+function clearDisplay() {
+    display.textContent = "";
+    storedNumber = "";
+    displayValue = "";
+    result = "";
+    clickedOperator = "";
+
+}
+
+
+
+clear.addEventListener('click', clearDisplay);
+console.log(operate("*",5,5));
